@@ -23,17 +23,34 @@
 	
 	<context:component-scan base-package="com.tbn.sales" />
 	
-	<!-- プロパティファイルの設定 -->
+	
 	<beans:bean id="applicationProperties"
    		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+   		
+   		<!-- プロパティファイルの設定 -->
    		<beans:property name="locations">
        		<beans:list>
            		<beans:value>classpath:application.properties</beans:value>
        		</beans:list>
    		</beans:property>
 	</beans:bean>
+	<!-- 
+		<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	        <beans:property name="url" value="jdbc:mysql://localhost/jaxrs" />
+	        <beans:property name="username" value="jaxrs" />
+	        <beans:property name="password" value="jaxrs" />
+	    </beans:bean>
+	-->
+	    <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	        <beans:property name="dataSource" ref="dataSource" />
+	        <beans:property name="configLocation" value="classpath:mybatis-config.xml" />
+	        <beans:property name="mapperLocations" value="classpath:mybatis/**/*.xml" />
+	    </beans:bean>
 	
-	
-	
+	    <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	        <beans:property name="dataSource" ref="dataSource" />
+	    </beans:bean>
+	 
 	
 </beans:beans>
