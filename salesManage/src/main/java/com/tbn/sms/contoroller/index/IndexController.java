@@ -1,4 +1,4 @@
-package com.tbn.sales.index;
+package com.tbn.sms.contoroller.index;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package com.tbn.sales.db;
+package com.tbn.sms.contoroller.select;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tbn.sales.db.service.impl.ExampleServiceImpl;
+import com.tbn.sms.service.homeImpl.ExampleServiceImpl;
 
 /**
  * Handles requests for the application home page.

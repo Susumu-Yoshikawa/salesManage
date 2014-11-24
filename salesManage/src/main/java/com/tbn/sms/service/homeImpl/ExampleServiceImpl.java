@@ -1,16 +1,16 @@
-package com.tbn.sales.db.service.impl;
+package com.tbn.sms.service.homeImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.tbn.sales.db.dao.ExampleDao;
-import com.tbn.sales.db.service.ExampleService;
+import com.tbn.sms.dao.homeImpl.ExampleDaoImpl;
+import com.tbn.sms.service.home.ExampleService;
 
 @Component
 public class ExampleServiceImpl implements ExampleService {
 
 	@Autowired
-	private ExampleDao dao;
+	private ExampleDaoImpl dao;
 	
 	@Override
 	public String find() {

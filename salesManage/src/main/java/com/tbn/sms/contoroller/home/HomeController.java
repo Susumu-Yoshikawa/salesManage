@@ -1,4 +1,4 @@
-package com.tbn.sales;
+package com.tbn.sms.contoroller.home;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -17,7 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sales.Automobile.Automobile;
+import com.tbn.sms.beans.Automobile.Automobile;
 
 /**
  * Handles requests for the application home page.
@@ -45,7 +45,7 @@ public class HomeController {
 		
 		Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
         SqlSession session = new SqlSessionFactoryBuilder().build(reader).openSession();
-        Automobile sample1 = (Automobile)session.selectOne("select", 12);
+        Automobile sample1 = (Automobile)session.selectOne("select", 100);
         System.out.println(sample1);
         // List
         List<Automobile> sample2 = (List<Automobile>)session.selectList("select_all");

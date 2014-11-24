@@ -1,8 +1,8 @@
-package com.tbn.sales.db.dao.impl;
+package com.tbn.sms.dao.homeImpl;
 
 import org.springframework.stereotype.Component;
 
-import com.tbn.sales.db.dao.ExampleDao;
+import com.tbn.sms.dao.home.ExampleDao;
 
 @Component
 public class ExampleDaoImpl implements ExampleDao {

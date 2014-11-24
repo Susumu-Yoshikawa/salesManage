@@ -1,4 +1,4 @@
-package com.tbn.sales.db.service;
+package com.tbn.sms.service.home;
 
 public interface ExampleService {
 	public String find();
