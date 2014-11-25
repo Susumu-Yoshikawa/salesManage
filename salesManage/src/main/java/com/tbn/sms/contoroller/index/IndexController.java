@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.tbn.sms.dao.user.UserDao;
+
 /**
  * Handles requests for the application home page.
  */
@@ -22,7 +24,7 @@ public class IndexController {
 	@RequestMapping(value = "/")
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		new UserDao().all();
 		// 表示したいJSPファイルを指定
 		return "index";
 	}
