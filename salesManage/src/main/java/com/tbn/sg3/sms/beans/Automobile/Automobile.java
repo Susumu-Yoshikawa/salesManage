@@ -1,4 +1,4 @@
-package com.tbn.sms.beans.Automobile;
+package com.tbn.sg3.sms.beans.Automobile;
 
 public class Automobile {
 	private int id;

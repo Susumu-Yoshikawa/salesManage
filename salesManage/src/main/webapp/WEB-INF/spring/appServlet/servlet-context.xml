@@ -21,7 +21,10 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.tbn.sms" />
+	
+	<context:component-scan base-package="com.tbn.sms.*" />
+	
+	
 	
 	
 	<beans:bean id="applicationProperties"

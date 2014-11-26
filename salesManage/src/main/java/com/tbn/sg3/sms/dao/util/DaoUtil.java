@@ -1,4 +1,4 @@
-package com.tbn.sms.dao.util;
+package com.tbn.sg3.sms.dao.util;
 
 import java.io.IOException;
 

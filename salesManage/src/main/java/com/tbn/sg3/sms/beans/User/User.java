@@ -1,4 +1,4 @@
-package com.tbn.sms.beans.User;
+package com.tbn.sg3.sms.beans.User;
 
 public class User {
 	private int id;
