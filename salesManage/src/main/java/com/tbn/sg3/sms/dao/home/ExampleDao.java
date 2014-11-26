@@ -1,4 +1,4 @@
-package com.tbn.sms.dao.home;
+package com.tbn.sg3.sms.dao.home;
 
 public interface ExampleDao {
 	
