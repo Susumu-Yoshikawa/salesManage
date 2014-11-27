@@ -6,11 +6,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
   <typeAliases>
         <typeAlias
-        	type="com.tbn.sms.beans.Automobile.Automobile"
+        	type="com.tbn.sg3.sms.beans.Automobile.Automobile"
             alias="Automobile" />
         
         <typeAlias
-        	type="com.tbn.sms.beans.User.User"
+        	type="com.tbn.sg3.sms.beans.User.User"
             alias="User" />
     </typeAliases>
   <environments default="development">
@@ -26,6 +26,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   </environments>
   <mappers>
     <mapper resource="mybatis/order.xml"/>
-    <mapper resource="com/tbn/sms/dao/user/user-mapping.xml"/>
+    <mapper resource="mybatis/user-mapping.xml"/>
   </mappers>
 </configuration>
