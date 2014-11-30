@@ -23,10 +23,21 @@ public class UserServiceImpl implements UserService {
     public List<User> all() {
         SqlSession session = sessionFactory.openSession();
         UserDao dao = session.getMapper(UserDao.class);
-        List<User> list = dao.select(1);
-        System.out.println(list);
+        List<User> list = dao.select_all();
+        System.out.println(list.get(0).getName());
         session.close();
 
         return list;
     }
+
+	@Override
+	public List<User> select(int id) {
+		SqlSession session = sessionFactory.openSession();
+        UserDao dao = session.getMapper(UserDao.class);
+        List<User> list = dao.select(id);
+        System.out.println(list.get(0).getName());
+        session.close();
+
+        return list;
+	}
 }

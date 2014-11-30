@@ -13,9 +13,24 @@
 	${title}
 </h1>
 
-<h1>
-	${test}
-</h1>
+<ul>
+	<li>
+		<a href="<c:url value="${url}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.sel.all')" /> 
+		</a>
+	</li>
+	<li>
+		<a href="<c:url value="@applicationProperties.getProperty('path.sel.sea')" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.sel.sea')" /> 
+		</a>
+	</li>
+	<li>
+		<a href="<c:url value="@applicationProperties.getProperty('path.sel.url')" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.sel.url')" /> 
+		</a>
+	</li>
+</ul>
+
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.tbn.sg3.sms.contoroller.select;
+package com.tbn.sg3.sms.contoroller.select.all;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -16,9 +16,9 @@ import com.tbn.sg3.sms.service.user.UserService;
  * Handles requests for the application home page.
  */
 @Controller
-public class selectController {
+public class SelectAllController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(selectController.class);
+	private static final Logger logger = LoggerFactory.getLogger(SelectAllController.class);
 
 	@Autowired
     private Properties applicationProperties;
@@ -26,21 +26,21 @@ public class selectController {
 	@Autowired
 	private UserService user;
 	
+	public static final String PATH=new Properties().getProperty("path.sel.all");
+	
 	/**
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
-	@RequestMapping(value = "/db/select")
+	@RequestMapping(value = "/db/select/all")
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		String title = applicationProperties.getProperty("link.sel");
-		String url = applicationProperties.getProperty("path.sel.all");
+		String title = applicationProperties.getProperty("link.sel.all");
 		model.addAttribute("title", title);
-		model.addAttribute("url",url);
-		//model.addAttribute("test", user.all());
+		model.addAttribute("test", user.all());
 		
 		// 表示したいJSPファイルを指定
-		return "/db/select";
+		return PATH;
 	}
 	
 }

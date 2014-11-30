@@ -32,6 +32,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "Automobile{" + "id=" + id + ",make=" + name + '}';
+        return "User{" + "id=" + id + ",name=" + name + '}';
     }
 }
