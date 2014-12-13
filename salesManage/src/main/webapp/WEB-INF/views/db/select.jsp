@@ -15,17 +15,21 @@
 
 <ul>
 	<li>
-		<a href="<c:url value="${url}" />">
+		<a href="<c:url value="${all}" />">
 			<spring:eval expression="@applicationProperties.getProperty('link.sel.all')" /> 
 		</a>
 	</li>
 	<li>
-		<a href="<c:url value="@applicationProperties.getProperty('path.sel.sea')" />">
-			<spring:eval expression="@applicationProperties.getProperty('link.sel.sea')" /> 
-		</a>
+		
+			<a href="<c:url value="${sea}" />">
+				<del>
+					<spring:eval expression="@applicationProperties.getProperty('link.sel.sea')" /> 
+				</del>
+			</a>
+		
 	</li>
 	<li>
-		<a href="<c:url value="@applicationProperties.getProperty('path.sel.url')" />">
+		<a href="<c:url value="${url}/1" />">
 			<spring:eval expression="@applicationProperties.getProperty('link.sel.url')" /> 
 		</a>
 	</li>

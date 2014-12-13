@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.tbn.sg3.sms.common.ConstUtil;
 import com.tbn.sg3.sms.service.user.UserService;
 
 /**
@@ -26,21 +27,23 @@ public class selectController {
 	@Autowired
 	private UserService user;
 	
+	
 	/**
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
-	@RequestMapping(value = "/db/select")
+	@RequestMapping(value = ConstUtil.SELECT_PATH)
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		String title = applicationProperties.getProperty("link.sel");
-		String url = applicationProperties.getProperty("path.sel.all");
 		model.addAttribute("title", title);
-		model.addAttribute("url",url);
+		model.addAttribute("all",ConstUtil.SELECT_ALL_PATH);
+		model.addAttribute("sea",ConstUtil.SELECT_SEARCH_PATH);
+		model.addAttribute("url",ConstUtil.SELECT_URL_PATH);
 		//model.addAttribute("test", user.all());
 		
 		// 表示したいJSPファイルを指定
-		return "/db/select";
+		return ConstUtil.SELECT_PATH;
 	}
 	
 }

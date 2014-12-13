@@ -1,4 +1,4 @@
-package com.tbn.sg3.sms.contoroller.select.all;
+package com.tbn.sg3.sms.contoroller.select.url;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tbn.sg3.sms.common.ConstUtil;
@@ -17,9 +18,9 @@ import com.tbn.sg3.sms.service.user.UserService;
  * Handles requests for the application home page.
  */
 @Controller
-public class SelectAllController {
+public class SelectUrlController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(SelectAllController.class);
+	private static final Logger logger = LoggerFactory.getLogger(SelectUrlController.class);
 
 	@Autowired
     private Properties applicationProperties;
@@ -31,15 +32,17 @@ public class SelectAllController {
 	/**
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
-	@RequestMapping(value = ConstUtil.SELECT_ALL_PATH)
-	public String index(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value = ConstUtil.SELECT_URL_PATH+"/{userId}")
+	public String index(@PathVariable("userId") int userId, Model model) {
 		
-		model.addAttribute("title", applicationProperties.getProperty("link.sel.url"));
-		model.addAttribute("test", user.all());
+		logger.info("AccessUrl"+ConstUtil.SELECT_URL_PATH+"/{"+userId+"}");
+		
+		String title = applicationProperties.getProperty("link.sel.all");
+		model.addAttribute("title", title);
+		model.addAttribute("test", user.select(userId));
 		
 		// 表示したいJSPファイルを指定
-		return ConstUtil.SELECT_ALL_PATH;
+		return ConstUtil.SELECT_URL_PATH;
 	}
 	
 }
