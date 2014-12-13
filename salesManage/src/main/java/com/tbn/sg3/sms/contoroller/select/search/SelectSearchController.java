@@ -1,5 +1,6 @@
-package com.tbn.sg3.sms.contoroller.select.url;
+package com.tbn.sg3.sms.contoroller.select.search;
 
+import java.util.Locale;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -7,9 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tbn.sg3.sms.common.ConstUtil;
 import com.tbn.sg3.sms.service.user.UserService;
@@ -18,9 +17,9 @@ import com.tbn.sg3.sms.service.user.UserService;
  * Handles requests for the application home page.
  */
 @Controller
-public class SelectUrlController {
+public class SelectSearchController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(SelectUrlController.class);
+	private static final Logger logger = LoggerFactory.getLogger(SelectSearchController.class);
 
 	@Autowired
     private Properties applicationProperties;
@@ -28,21 +27,21 @@ public class SelectUrlController {
 	@Autowired
 	private UserService user;
 	
+	//public static final String PATH=new Properties().getProperty("path.sel.all");
 	
 	/**
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
-	@RequestMapping(value = ConstUtil.SELECT_URL_PATH+"/{userId}",method=RequestMethod.GET)
-	public String index(@PathVariable("userId") int userId, Model model) {
+	@RequestMapping(value = ConstUtil.SELECT_SEARCH_PATH)
+	public String index(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		logger.info("AccessUrl"+ConstUtil.SELECT_URL_PATH+"/{"+userId+"}");
-		
-		String title = applicationProperties.getProperty("link.sel.url");
+		String title = applicationProperties.getProperty("link.sel.sea");
 		model.addAttribute("title", title);
-		model.addAttribute("test", user.select(userId));
+		model.addAttribute("test", user.all());
 		
 		// 表示したいJSPファイルを指定
-		return ConstUtil.SELECT_URL_PATH;
+		return ConstUtil.SELECT_SEARCH_PATH;
 	}
 	
 }
