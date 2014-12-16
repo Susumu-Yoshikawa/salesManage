@@ -1,4 +1,4 @@
-package com.tbn.sg3.sms.contoroller.index;
+package com.tbn.sg3.sms.contoroller.delete;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -12,33 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tbn.sg3.sms.common.ConstUtil;
 
-
 /**
  * Handles requests for the application home page.
  */
 @Controller
-public class IndexController {
+public class DeleteController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
-	
+	private static final Logger logger = LoggerFactory.getLogger(DeleteController.class);
+
 	@Autowired
     private Properties applicationProperties;
-
+	
+	
 	/**
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
-	@RequestMapping(value = "/")
+	@RequestMapping(value = ConstUtil.DELETE_PATH)
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		model.addAttribute("title", applicationProperties.getProperty("link.top"));
-		model.addAttribute("select",ConstUtil.SELECT_PATH);
-		model.addAttribute("insert",ConstUtil.INSERT_PATH);
-		model.addAttribute("update",ConstUtil.UPDATE_PATH);
-		model.addAttribute("delete",ConstUtil.DELETE_PATH);
+		model.addAttribute("title", applicationProperties.getProperty("link.del"));
 		
 		// 表示したいJSPファイルを指定
-		return "index";
+		return ConstUtil.DELETE_PATH;
 	}
 	
 }

@@ -6,27 +6,33 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title><spring:eval expression="@applicationProperties.getProperty('link.top')" /> </title>
+	<title> ${title} </title>
 </head>
 <body>
 <h1>
-	<spring:eval expression="@applicationProperties.getProperty('top.head')" /> 
+	${title}
 </h1>
 
 <ul>
 	<li>
-		<a href="<c:url value="/db/select" />">
+		<a href="<c:url value="${select}" />">
 			<spring:eval expression="@applicationProperties.getProperty('link.sel')" /> 
 		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.ins')" /> 
+		<a href="<c:url value="${insert}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.ins')" />
+		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.upd')" /> 
+		<a href="<c:url value="${update}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.upd')" /> 
+		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.del')" /> 
+		<a href="<c:url value="${delete}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.del')" /> 
+		</a>
 	</li>
 </ul>
 </body>
