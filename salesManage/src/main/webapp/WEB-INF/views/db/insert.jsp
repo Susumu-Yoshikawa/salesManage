@@ -13,7 +13,17 @@
 	${title}
 </h1>
 
-
+<form:form modelAttribute="user" action="insert/insert" method="get">
+	<p>
+		ID:<form:input path="id" />
+	</p>
+	
+	<p>
+		名前:<form:input path="name" />
+	</p>
+	
+	<input type="submit" value="送信">
+</form:form>
 
 </body>
 </html>
