@@ -13,5 +13,6 @@ public class ConstUtil {
 	public static final String INSERT_PATH="/db/insert";
 	public static final String UPDATE_PATH="/db/update";
 	public static final String DELETE_PATH="/db/delete";
+	public static final String COMPLETE_PATH="/db/complete";
 	
 }

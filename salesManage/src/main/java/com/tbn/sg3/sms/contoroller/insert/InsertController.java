@@ -37,9 +37,7 @@ public class InsertController {
 	public User userForm(){
 		return new User();
 	}
-	/**
-	 * Simply selects the index.jsp view to render by returning its name.
-	 */
+
 	@RequestMapping
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -53,13 +51,16 @@ public class InsertController {
 	@RequestMapping(value = "/insert",method=RequestMethod.GET)
 	public String insert(User user, Model model) {
 		
-		model.addAttribute("title", applicationProperties.getProperty("link.ins"));
-		model.addAttribute("name", user.getName());
-		
 		userImpl.insert(user);
 		
+		model.addAttribute("title", applicationProperties.getProperty("link.cmp"));
+		model.addAttribute("form", applicationProperties.getProperty("link.ins"));
+		model.addAttribute("name", user.getName());
+		
+		
+		
 		// 表示したいJSPファイルを指定
-		return ConstUtil.INSERT_PATH;
+		return ConstUtil.COMPLETE_PATH;
 	}
 	
 }
