@@ -13,6 +13,10 @@
 	${title}
 </h1>
 
+<h2>
+	${name}
+</h2>
+
 <form:form modelAttribute="user" action="insert/insert" method="get">
 	<p>
 		ID:<form:input path="id" />

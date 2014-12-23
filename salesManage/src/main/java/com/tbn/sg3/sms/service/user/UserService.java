@@ -9,4 +9,5 @@ import com.tbn.sg3.sms.beans.User.User;
 public interface UserService {
     public List<User> all();
     public List<User> select(int id);
+    public void insert(User user);
 }

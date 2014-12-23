@@ -10,5 +10,7 @@ public interface UserDao {
 	public List<User> select(int id);
 	
 	public List<User> select_all();
+	
+	public void insert(User user);
 		
 }

@@ -40,4 +40,15 @@ public class UserServiceImpl implements UserService {
 
         return list;
 	}
+	
+	@Override
+	public void insert(User user) {
+		SqlSession session = sessionFactory.openSession();
+        UserDao dao = session.getMapper(UserDao.class);
+        dao.insert(user);
+        session.commit();
+        session.close();
+	}
+
+	
 }

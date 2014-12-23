@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tbn.sg3.sms.beans.User.User;
 import com.tbn.sg3.sms.common.ConstUtil;
+import com.tbn.sg3.sms.service.user.UserService;
 
 /**
  * Handles requests for the application home page.
@@ -26,6 +27,9 @@ public class InsertController {
 
 	@Autowired
     private Properties applicationProperties;
+	
+	@Autowired
+	private UserService userImpl;
 	
 	// @ModelAttributeのデフォルトの属性名はクラス名の先頭を小文字にしたもの。
 	// この場合、「user」がinsert.jspの「modelAttribute」のuserと一致
@@ -49,7 +53,10 @@ public class InsertController {
 	@RequestMapping(value = "/insert",method=RequestMethod.GET)
 	public String insert(User user, Model model) {
 		
+		model.addAttribute("title", applicationProperties.getProperty("link.ins"));
 		model.addAttribute("name", user.getName());
+		
+		userImpl.insert(user);
 		
 		// 表示したいJSPファイルを指定
 		return ConstUtil.INSERT_PATH;
