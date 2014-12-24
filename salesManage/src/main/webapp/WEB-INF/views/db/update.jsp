@@ -13,7 +13,17 @@
 	${title}
 </h1>
 
-
+<form:form modelAttribute="user" action="complete" method="get">
+	<p>
+		ID:<form:input path="id" value="${userObj.id}" readonly="true"/>
+	</p>
+	
+	<p>
+		名前:<form:input path="name" value="${userObj.name}" />
+	</p>
+	
+	<input type="submit" value="更新">
+</form:form>
 
 </body>
 </html>

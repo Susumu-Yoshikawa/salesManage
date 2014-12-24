@@ -31,11 +31,11 @@ public class UserServiceImpl implements UserService {
     }
 
 	@Override
-	public List<User> select(int id) {
+	public User select(String id) {
 		SqlSession session = sessionFactory.openSession();
         UserDao dao = session.getMapper(UserDao.class);
-        List<User> list = dao.select(id);
-        System.out.println(list.get(0).getName());
+        User list = dao.select(id);
+        System.out.println(list.getName());
         session.close();
 
         return list;
@@ -46,6 +46,15 @@ public class UserServiceImpl implements UserService {
 		SqlSession session = sessionFactory.openSession();
         UserDao dao = session.getMapper(UserDao.class);
         dao.insert(user);
+        session.commit();
+        session.close();
+	}
+	
+	@Override
+	public void update(User user) {
+		SqlSession session = sessionFactory.openSession();
+        UserDao dao = session.getMapper(UserDao.class);
+        dao.update(user);
         session.commit();
         session.close();
 	}

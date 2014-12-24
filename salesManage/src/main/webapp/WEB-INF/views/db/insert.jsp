@@ -17,16 +17,17 @@
 	${name}
 </h2>
 
-<form:form modelAttribute="user" action="insert/insert" method="get">
+<form:form modelAttribute="user" action="insert/complete" method="get">
 	<p>
-		ID:<form:input path="id" />
+		<%-- idがString型なのは、int型だと初期値「0」がvalueに入るため --%>
+		ID:<form:input path="id" value="" />
 	</p>
 	
 	<p>
-		名前:<form:input path="name" />
+		名前:<form:input path="name" value="" />
 	</p>
 	
-	<input type="submit" value="送信">
+	<input type="submit" value="登録">
 </form:form>
 
 </body>

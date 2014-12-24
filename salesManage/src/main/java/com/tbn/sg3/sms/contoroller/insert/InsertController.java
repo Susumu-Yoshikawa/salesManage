@@ -48,7 +48,7 @@ public class InsertController {
 		return ConstUtil.INSERT_PATH;
 	}
 	
-	@RequestMapping(value = "/insert",method=RequestMethod.GET)
+	@RequestMapping(value = "/complete",method=RequestMethod.GET)
 	public String insert(User user, Model model) {
 		
 		userImpl.insert(user);

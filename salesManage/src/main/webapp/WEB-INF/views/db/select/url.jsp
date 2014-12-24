@@ -18,16 +18,14 @@
 		<td>ID</td>
 		<td>NAME</td>
 	</tr>
-	<c:forEach var="obj" items="${test}" varStatus="status">
 		<tr>
 			<td>
-				<c:out value="${obj.id}" />
+				<c:out value="${test.id}" />
 			</td>
 			<td>
-				<c:out value="${obj.name}" />
+				<c:out value="${test.name}" />
 			</td>
 		</tr>
-	</c:forEach>
 </table>
 
 <h3>

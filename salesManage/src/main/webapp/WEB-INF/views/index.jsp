@@ -25,7 +25,7 @@
 		</a>
 	</li>
 	<li>
-		<a href="<c:url value="${update}" />">
+		<a href="<c:url value="${update}/1" />">
 			<spring:eval expression="@applicationProperties.getProperty('link.upd')" /> 
 		</a>
 	</li>
