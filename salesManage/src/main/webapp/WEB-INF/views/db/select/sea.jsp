@@ -9,9 +9,10 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
+
+<c:import url="../../header.jsp" />
+
+<hr />
 
 <table border=1>
 	<tr>
@@ -30,6 +31,9 @@
 	</c:forEach>
 </table>
 
+<hr />
+
+<c:import url="../../footer.jsp" />
 
 </body>
 </html>

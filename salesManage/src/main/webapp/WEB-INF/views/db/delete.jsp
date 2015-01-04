@@ -9,11 +9,14 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
 
+<c:import url="../header.jsp" />
 
+<hr />
+
+<hr />
+
+<c:import url="../footer.jsp" />
 
 </body>
 </html>

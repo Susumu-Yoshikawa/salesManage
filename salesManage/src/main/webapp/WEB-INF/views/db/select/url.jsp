@@ -9,9 +9,10 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
+
+<c:import url="../../header.jsp" />
+
+<hr />
 
 <table border=1>
 	<tr>
@@ -33,6 +34,10 @@ URLの「/url/」の後ろの値を任意に変えてください。
 <br />
 その値をキーにuserテーブルから検索しています。
 </h3>
+
+<hr />
+
+<c:import url="../../footer.jsp" />
 
 </body>
 </html>

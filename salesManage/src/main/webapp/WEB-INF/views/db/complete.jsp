@@ -9,9 +9,10 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
+
+<c:import url="../header.jsp" />
+
+<hr />
 
 <h2>
 	${name}の${form}が完了しました。
@@ -20,6 +21,10 @@
 <a href="../..//">
 	TOPへ戻る
 </a>
+
+<hr />
+
+<c:import url="../footer.jsp" />
 
 </body>
 </html>

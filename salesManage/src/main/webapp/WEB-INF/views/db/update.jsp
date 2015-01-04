@@ -9,9 +9,10 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
+
+<c:import url="../header.jsp" />
+
+<hr />
 
 <form:form modelAttribute="user" action="complete" method="get">
 	<p>
@@ -24,6 +25,10 @@
 	
 	<input type="submit" value="更新">
 </form:form>
+
+<hr />
+
+<c:import url="../footer.jsp" />
 
 </body>
 </html>

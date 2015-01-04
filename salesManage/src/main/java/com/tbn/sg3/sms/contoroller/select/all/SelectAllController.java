@@ -35,7 +35,7 @@ public class SelectAllController {
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		model.addAttribute("title", applicationProperties.getProperty("link.sel.url"));
+		model.addAttribute("title", applicationProperties.getProperty("link.sel.all"));
 		model.addAttribute("test", user.all());
 		
 		// 表示したいJSPファイルを指定

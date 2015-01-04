@@ -9,9 +9,10 @@
 	<title>${title}</title>
 </head>
 <body>
-<h1>
-	${title}
-</h1>
+
+<c:import url="../header.jsp" />
+
+<hr />
 
 <ul>
 	<li>
@@ -35,6 +36,9 @@
 	</li>
 </ul>
 
+<hr />
+
+<c:import url="../footer.jsp" />
 
 </body>
 </html>
