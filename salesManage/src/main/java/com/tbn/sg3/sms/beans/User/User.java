@@ -3,6 +3,7 @@ package com.tbn.sg3.sms.beans.User;
 public class User {
 	private int id;
     private String name;
+    private int[] ids;
 
     public int getId() {
 		return id;
@@ -34,5 +35,13 @@ public class User {
     public String toString() {
         return "User{" + "id=" + id + ",name=" + name + '}';
     }
+
+	public int[] getIds() {
+		return ids;
+	}
+
+	public void setIds(int[] ids) {
+		this.ids = ids;
+	}
 
 }

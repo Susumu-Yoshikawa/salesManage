@@ -59,5 +59,13 @@ public class UserServiceImpl implements UserService {
         session.close();
 	}
 
+	@Override
+	public void delete(User user) {
+		SqlSession session = sessionFactory.openSession();
+        UserDao dao = session.getMapper(UserDao.class);
+        dao.delete(user);
+        session.commit();
+        session.close();
+	}
 	
 }
