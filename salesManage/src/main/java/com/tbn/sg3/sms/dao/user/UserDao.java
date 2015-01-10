@@ -7,7 +7,7 @@ import com.tbn.sg3.sms.beans.User.User;
 public interface UserDao {
 	
 	// user-mapping.xmlの「id=select」を呼ぶ
-	public User select(String id);
+	public User select(int id);
 	
 	public List<User> select_all();
 	

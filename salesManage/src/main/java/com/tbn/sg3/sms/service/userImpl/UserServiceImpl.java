@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
 	@Override
-	public User select(String id) {
+	public User select(int id) {
 		SqlSession session = sessionFactory.openSession();
         UserDao dao = session.getMapper(UserDao.class);
         User list = dao.select(id);

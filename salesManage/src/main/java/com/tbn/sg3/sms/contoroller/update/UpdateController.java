@@ -36,7 +36,7 @@ public class UpdateController {
 	}
 	
 	@RequestMapping(value = "/{userId}",method=RequestMethod.GET)
-	public String index(@PathVariable("userId") String userId, Model model) {
+	public String index(@PathVariable("userId") int userId, Model model) {
 		
 		User us = userImpl.select(userId);
 		

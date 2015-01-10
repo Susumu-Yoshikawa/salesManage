@@ -1,14 +1,14 @@
 package com.tbn.sg3.sms.beans.User;
 
 public class User {
-	private String id;
+	private int id;
     private String name;
 
-    public String getId() {
+    public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -24,7 +24,7 @@ public class User {
         super();
     }
 
-    public User( String id, String name) {
+    public User( int id, String name) {
         super();
         this.id = id;
         this.name = name;
@@ -34,4 +34,5 @@ public class User {
     public String toString() {
         return "User{" + "id=" + id + ",name=" + name + '}';
     }
+
 }

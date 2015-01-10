@@ -33,7 +33,7 @@ public class SelectUrlController {
 	 * Simply selects the index.jsp view to render by returning its name.
 	 */
 	@RequestMapping(value = ConstUtil.SELECT_URL_PATH+"/{userId}",method=RequestMethod.GET)
-	public String index(@PathVariable("userId") String userId, Model model) {
+	public String index(@PathVariable("userId") int userId, Model model) {
 		
 		logger.info("AccessUrl"+ConstUtil.SELECT_URL_PATH+"/{"+userId+"}");
 		

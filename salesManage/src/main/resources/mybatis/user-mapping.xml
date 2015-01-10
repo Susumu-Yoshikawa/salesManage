@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="id" property="id" />
 		<result column="name" property="name" />
 	</resultMap>
-	<select id="select" parameterType="String" resultType="User"
+	<select id="select" parameterType="Integer" resultType="User"
 		resultMap="UserResult">
 		select * from
 		user_tbl where id = #{id}
@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into user_tbl (id,name)
 		values (#{id}, #{name})
     </insert>
-	<delete id="delete" parameterType="String">
+	<delete id="delete" parameterType="Integer">
 		delete from user_tbl where
 		id = #{id}
   	</delete>
