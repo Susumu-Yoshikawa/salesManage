@@ -6,27 +6,38 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title><spring:eval expression="@applicationProperties.getProperty('link.top')" /> </title>
+	<title> ${title} </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<c:url value="/resource/css/addons/uikit.gradient.addons.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resource/css/uikit.gradient.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resource/css/uikit.min.css" />">
+    <script src="<c:url value="/resource/js/uikit.js" />"></script>
 </head>
 <body>
 <h1>
-	<spring:eval expression="@applicationProperties.getProperty('top.head')" /> 
+	${title}
 </h1>
 
 <ul>
 	<li>
-		<a href="<c:url value="/db/select" />">
+		<a href="<c:url value="${select}" />">
 			<spring:eval expression="@applicationProperties.getProperty('link.sel')" /> 
 		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.ins')" /> 
+		<a href="<c:url value="${insert}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.ins')" />
+		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.upd')" /> 
+		<a href="<c:url value="${update}/1" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.upd')" /> 
+		</a>
 	</li>
 	<li>
-		<spring:eval expression="@applicationProperties.getProperty('link.del')" /> 
+		<a href="<c:url value="${delete}" />">
+			<spring:eval expression="@applicationProperties.getProperty('link.del')" /> 
+		</a>
 	</li>
 </ul>
 </body>

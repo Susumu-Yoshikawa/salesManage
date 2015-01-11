@@ -7,6 +7,11 @@
 <html>
 <head>
 	<title>${title}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<c:url value="/resources/css/addons/uikit.gradient.addons.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/uikit.gradient.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/uikit.min.css" />">
+    <script src="<c:url value="/resources/js/uikit.js" />"></script>
 </head>
 <body>
 

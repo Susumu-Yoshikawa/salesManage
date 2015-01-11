@@ -15,26 +15,44 @@ import com.tbn.sg3.sms.common.ConstUtil;
 import com.tbn.sg3.sms.service.user.UserService;
 
 /**
- * Handles requests for the application home page.
+ * 更新コントローラー
+ * @author TEST
+ * @version 2015/01/11
  */
 @Controller
 @RequestMapping(value = ConstUtil.UPDATE_PATH)
 public class UpdateController {
 	
 
+	/**
+	 * プロパティクラス
+	 */
 	@Autowired
     private Properties applicationProperties;
 	
+	/**
+	 * UserServiceImplementsクラス
+	 */
 	@Autowired
 	private UserService userImpl;
 	
 	// @ModelAttributeのデフォルトの属性名はクラス名の先頭を小文字にしたもの。
 	// この場合、「user」がupdate.jspの「modelAttribute」のuserと一致
+	/**
+	 * ビューからコントローラーにデータを送るための処理
+	 * @return User
+	 */
 	@ModelAttribute
 	public User userForm(){
 		return new User();
 	}
 	
+	/**
+	 * 更新画面初期表示
+	 * @param userId
+	 * @param model
+	 * @return 表示したいJSP
+	 */
 	@RequestMapping(value = "/{userId}",method=RequestMethod.GET)
 	public String index(@PathVariable("userId") int userId, Model model) {
 		
@@ -47,6 +65,12 @@ public class UpdateController {
 		return ConstUtil.UPDATE_PATH;
 	}
 	
+	/**
+	 * 更新処理後表示
+	 * @param user
+	 * @param model
+	 * @return 表示したいJSP
+	 */
 	@RequestMapping(value = "/complete",method=RequestMethod.GET)
 	public String update(User user, Model model) {
 		

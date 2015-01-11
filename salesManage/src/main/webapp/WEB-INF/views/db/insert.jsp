@@ -7,33 +7,38 @@
 <html>
 <head>
 	<title>${title}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<c:url value="/resources/css/addons/uikit.gradient.addons.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/uikit.gradient.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/uikit.min.css" />">
+    <script src="<c:url value="/resources/js/uikit.js" />"></script>
 </head>
 <body>
-
-<c:import url="../header.jsp" />
-
-<hr />
-
-<h2>
-	${name}
-</h2>
-
-<form:form modelAttribute="user" action="insert/complete" method="get">
-	<p>
-		<%-- idがString型なのは、int型だと初期値「0」がvalueに入るため --%>
-		ID:<form:input path="id" value="" />
-	</p>
-	
-	<p>
-		名前:<form:input path="name" value="" />
-	</p>
-	
-	<input type="submit" value="登録">
-</form:form>
-
-<hr />
-
-<c:import url="../footer.jsp" />
-
+	<div class="uk-container uk-container-center">
+		<c:import url="../header.jsp" />
+		
+		<hr />
+		<div class="uk-margin">
+			<h2>
+				${name}
+			</h2>
+			
+			<form:form modelAttribute="user" action="insert/complete" method="get" cssClass="uk-form uk-margin" >
+				<p>
+					<%-- idがString型なのは、int型だと初期値「0」がvalueに入るため --%>
+					ID:<form:input path="id" value="" class="uk-form" />
+				</p>
+				
+				<p>
+					名前:<form:input path="name" value="" class="uk-form" />
+				</p>
+				
+				<input type="submit" value="登録" class="uk-button">
+			</form:form>
+		</div>
+		<hr />
+		
+		<c:import url="../footer.jsp" />
+	</div>
 </body>
 </html>
