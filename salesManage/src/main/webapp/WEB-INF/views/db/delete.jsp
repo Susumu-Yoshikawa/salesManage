@@ -48,6 +48,7 @@
 			</div>
 			
 			<hr />
+			<a href="../../">TOPへ戻る</a>
 			<c:import url="../footer.jsp" />
 		</div>
 	</body>

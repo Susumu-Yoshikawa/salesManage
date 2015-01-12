@@ -39,6 +39,9 @@
 			</div>
 			
 			<hr />
+			<a href="../select">一覧へ戻る</a>
+			<br />
+			<a href="../../../">TOPへ戻る</a>
 			<c:import url="../../footer.jsp" />
 		</div>
 	</body>
