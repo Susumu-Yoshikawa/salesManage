@@ -24,15 +24,11 @@ import com.tbn.sg3.sms.service.user.UserService;
 public class UpdateController {
 	
 
-	/**
-	 * プロパティクラス
-	 */
+	/** プロパティクラス */
 	@Autowired
     private Properties applicationProperties;
 	
-	/**
-	 * UserServiceImplementsクラス
-	 */
+	/** UserServiceImplementsクラス */
 	@Autowired
 	private UserService userImpl;
 	
@@ -40,7 +36,8 @@ public class UpdateController {
 	// この場合、「user」がupdate.jspの「modelAttribute」のuserと一致
 	/**
 	 * ビューからコントローラーにデータを送るための処理
-	 * @return User
+	 * 
+	 * @return ユーザークラス
 	 */
 	@ModelAttribute
 	public User userForm(){
@@ -49,15 +46,18 @@ public class UpdateController {
 	
 	/**
 	 * 更新画面初期表示
+	 * 
 	 * @param userId
 	 * @param model
-	 * @return 表示したいJSP
+	 * @return update.jsp(更新画面)
 	 */
 	@RequestMapping(value = "/{userId}",method=RequestMethod.GET)
 	public String index(@PathVariable("userId") int userId, Model model) {
 		
+		// 引数をもとにテーブルからデータ取得
 		User us = userImpl.select(userId);
 		
+		// モデルにセット
 		model.addAttribute("title", applicationProperties.getProperty("link.upd"));
 		model.addAttribute("userObj", us);
 		
@@ -66,16 +66,22 @@ public class UpdateController {
 	}
 	
 	/**
-	 * 更新処理後表示
+	 * 更新処理後表示<br>
+	 * 改行改行
+	 * 
 	 * @param user
 	 * @param model
-	 * @return 表示したいJSP
+	 * @return complete.jsp
 	 */
 	@RequestMapping(value = "/complete",method=RequestMethod.GET)
 	public String update(User user, Model model) {
 		
+		/* ユーザIDをキーに
+		 * 名前の更新処理
+		 */
 		userImpl.update(user);
 		
+		// モデルにセット
 		model.addAttribute("title", applicationProperties.getProperty("link.cmp"));
 		model.addAttribute("form", applicationProperties.getProperty("link.upd"));
 		model.addAttribute("name", user.getName());
